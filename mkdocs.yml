@@ -1,0 +1,9 @@
+site_name: Atheios documentation
+site_description: Dcoumentation for the Atheios project
+theme: readthedocs
+pages:
+    - ['index.md', 'Index']
+    - ['start.md', 'Get Started']
+nav:
+    - 'index.md'
+    - 'about.md' 
