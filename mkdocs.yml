@@ -6,6 +6,6 @@ nav:
     - 'start.md'
     - 'api.md'
     - 'api/portal.md'
-    - 'api/qpi.md'
+    - 'api/api.md'
     - 'api/wss.md'
     - 'gamedev_modules.md'
