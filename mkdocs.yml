@@ -4,5 +4,6 @@ theme: readthedocs
 nav:
     - 'index.md'
     - 'start.md'
+    - 'api.md'
     - 'portal.md'
     - 'gamedev_modules.md'
