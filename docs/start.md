@@ -19,6 +19,12 @@ To get the current block check this link:
 
 [Current block](https://api.atheios.org/api/getBlockNumber). 
 
+### Pools
+Typically You work with Miners together in order to get a faster more equal reward.
+This is done in so called pools. Atheios can be mined in the following pools:
+
+[Current pools](https://www.atheios.org/#miningpools). 
+
 ## Gamers
 
 ## Game developers
