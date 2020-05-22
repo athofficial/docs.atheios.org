@@ -1,6 +1,7 @@
-# The websocket protocol for games
+# The GARP protocol
 
-We have designed a gaming protocol on top of websocket. This protocol does all the game resul handling.
+We have designed a game resolution protocol (GARP) on top of websocket. This 
+protocol does all the game resolution handling.
 The endpoint of that protocol is wss.atheios.org. From there You might be directed to other domains
 from a load distribution perspective.
 
@@ -23,7 +24,11 @@ Currently we are in version 0.1.4. We are using the following definitions:
     In this stage we keep compatibility. New releases are published well ahead and 
     test pools are provided for early integration
     
-## Game authentication: AuthenticatedConnectRequest
+## Terminology
+In the next paragraph we will use 
+
+    <WHATEVER> as a place holder for WHATEVER    
+## AuthenticatedConnectRequest
 ### Availablility:  
 from 0.1.4
 
@@ -60,7 +65,7 @@ A single error case can occure, when the <GAMETOKENID> cannot be found.
     	"requestId ": "0"
     }
 
-## Authenticate user: 
+## AuthenticateUser: 
 Availablility:  
 from 0.1.4
 
