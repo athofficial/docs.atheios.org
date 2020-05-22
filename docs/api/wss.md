@@ -67,7 +67,7 @@ A single error case can occure, when the <GAMETOKENID> cannot be found.
 
 ## AuthenticateUser: 
 Availablility:  
-from 0.1.4
+<button type="button" class="btn btn-primary">0.1.4</button>
 
 ### Functionality:  
 This request sends user credentials for validation by the portal.
