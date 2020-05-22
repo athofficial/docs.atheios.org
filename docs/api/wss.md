@@ -23,11 +23,11 @@ Currently we are in version 0.1.4. We are using the following definitions:
     In this stage we keep compatibility. New releases are published well ahead and 
     test pools are provided for early integration
     
-### Game authentication: AuthenticatedConnectRequest
-#### Availablility:  
+## Game authentication: AuthenticatedConnectRequest
+### Availablility:  
 from 0.1.4
 
-####Functionality:  
+### Functionality:  
 This function is a mandatory start of all communication with the websocket.
 It is invoked with a websocket address url constructed in the following way:
 
@@ -41,7 +41,7 @@ Once that has happened there will be a a back and forth communication
 ensuring that the game is authenticated. If the communication is successful
 the wss protocol will reply a session ID which is stored as a state.
 
-#### Successful case:  
+### Successful case:  
 The case is successful when wss returns a session ID
 
     {
@@ -51,7 +51,7 @@ The case is successful when wss returns a session ID
     }
 
 
-#### Error cases:  
+### Error cases:  
 A single error case can occure, when the <GAMETOKENID> cannot be found.
 
     {
@@ -60,5 +60,61 @@ A single error case can occure, when the <GAMETOKENID> cannot be found.
     	"requestId ": "0"
     }
 
-### Fetching Game details
-Availablility: from 0.1.5
+## Authenticate user: 
+Availablility:  
+from 0.1.4
+
+### Functionality:  
+This request sends user credentials for validation by the portal.
+
+### Request
+The websocket message sent jas the following JSON format:
+
+    {
+    	"@class": ".AuthenticationRequest",
+    	"username": "<USERNAME>",
+    	"userpass": "<USERPASSWORD>",
+    	"apikey": "<GAMETOKENID>",
+    	"requestId": "1590177530798_1"
+    }
+    
+### Successful case:  
+The successful response is rendered according to the following:
+
+    {
+      "@class" : ".AuthenticationResponse",
+      "authToken" : "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+      "displayName" : "Lars",
+      "newPlayer" : false,
+      "userId" : "3",
+      "gameId" : "27",
+      "wage" : "1",
+      "requestId" : "1590177530798_1"
+    }
+    
+The response provides essential information for the game as the display name, userId, 
+gameId and the wage to be used for the game play.
+
+### Error cases:  
+In case the api key is not matching:
+
+    {
+    	"@class": ".AuthenticationResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "API key not matching."
+    	},
+    	"requestId": "1590177530798_1"
+    }
+    
+In case of a user / password mismatch: 
+
+    {
+        "@class": ".AuthenticationResponse",
+        "authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+        "error": {
+            "details": "User password unrecognized ."
+        },
+        "requestId": "1590177530798_1"
+    }
+
