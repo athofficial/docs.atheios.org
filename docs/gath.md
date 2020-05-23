@@ -1,4 +1,4 @@
-# GATH
+# GATH - The go-lang implamentation of Atheios
 gath is the central SW to run an own node. There are a lot of options for gath
 as specified when You run
 
