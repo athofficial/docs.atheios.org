@@ -241,4 +241,80 @@ In case the game if offline or not available:
     	"requestId": "1590221699845_3"
     }
 
+## SetWageRequest
+Availablility:  
+<button type="button" class="btn btn-primary">0.1.4</button>
+
+### Functionality:  
+This request sets the wage and should be the trigger for game start. This will trigger
+on the portal side to move the wage value from the user hot account to the gaming pot.
+
+### Request
+The websocket message sent jas the following JSON format:
+
+    {
+        "@class": ".SetWageRequest",
+        "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+        "gameId": "27",
+        "userId": "1",
+        "apiKey": "KpcxJ-mkxhV-nunAs-KbItV-FbNTV",
+        "wage": "1",
+        "requestId": "1590221699730_3"
+    }
+        
+### Successful case:  
+The successful response is rendered according to the following:
+
+    {
+      "@class" : ".SetWageResponse",
+      "authToken" : "CvZCaiXMcHVqk0uwh0b9VVOB",
+      "value" : 162,
+      "playid" : 353,
+      "gameid" : 27,
+      "currency" : "ATH",
+      "status" : "OK",
+      "reason" : "",
+      "requestId" : "1590221699730_3"
+    }
+     
+The response provides the reduced account value, but also the playId, which is the started 
+game. Note that the portal tracks the time for the game.
+
+
+
+### Error cases:  
+In case the authentication is not matching:
+
+    {
+    	"@class": ".SetWageResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Authentication is failing."
+    	},
+    	"requestId": "1590221699845_3"
+    }
+
+
+In case not enough coins are available:
+
+    {
+    	"@class": ".SetWageResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Error: Not enough coins available."
+    	},
+    	"requestId": "1590221699845_3"
+    }
+
+In case the game if offline or not available:
+
+    {
+    	"@class": ".SetWageResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Game doesn't exist."
+    	},
+    	"requestId": "1590221699845_3"
+    }
+
 
