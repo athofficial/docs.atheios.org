@@ -30,7 +30,7 @@ In the next paragraph we will use
     <WHATEVER> as a place holder for WHATEVER    
 ## AuthenticatedConnectRequest
 ### Availablility:  
-from 0.1.4
+<button type="button" class="btn btn-primary">0.1.4</button>
 
 ### Functionality:  
 This function is a mandatory start of all communication with the websocket.
@@ -65,7 +65,7 @@ A single error case can occure, when the <GAMETOKENID> cannot be found.
     	"requestId ": "0"
     }
 
-## AuthenticateUser: 
+## AuthenticateUser 
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
 
@@ -122,4 +122,123 @@ In case of a user / password mismatch:
         },
         "requestId": "1590177530798_1"
     }
+
+## AccountDetailsRequest
+Availablility:  
+<button type="button" class="btn btn-primary">0.1.4</button>
+
+### Functionality:  
+After validation the user id is available and more information can be requested.
+
+### Request
+The websocket message sent jas the following JSON format:
+
+    {
+        "@class": ".AccountDetailsRequest",
+    	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+    	"userId": "1",
+    	"requestId": "1590221675618_2"
+    }
+    
+### Successful case:  
+The successful response is rendered according to the following:
+
+    {
+      "@class" : ".AccountDetailsResponse",
+      "value" : 163,
+      "currency" : "ATH",
+      "requestId" : "1590221675618_2"
+    }   
+     
+The response provides essential information for the game as value of available currency.
+This amount needs to be checked when the user makes a wage.
+
+### Error cases:  
+In case the authentication is not matching:
+
+    {
+    	"@class": ".AccountDetailsResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Athentication not successful."
+    	},
+    	"requestId": "1590177530798_1"
+    }
+
+## SetWageRequest
+Availablility:  
+<button type="button" class="btn btn-primary">0.1.4</button>
+
+### Functionality:  
+This request sets the wage and should be the trigger for game start. This will trigger
+on the portal side to move the wage value from the user hot account to the gaming pot.
+
+### Request
+The websocket message sent jas the following JSON format:
+
+    {
+        "@class": ".SetWageRequest",
+        "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+        "gameId": "27",
+        "userId": "1",
+        "apiKey": "KpcxJ-mkxhV-nunAs-KbItV-FbNTV",
+        "wage": "1",
+        "requestId": "1590221699730_3"
+    }
+        
+### Successful case:  
+The successful response is rendered according to the following:
+
+    {
+      "@class" : ".SetWageResponse",
+      "authToken" : "CvZCaiXMcHVqk0uwh0b9VVOB",
+      "value" : 162,
+      "playid" : 353,
+      "gameid" : 27,
+      "currency" : "ATH",
+      "status" : "OK",
+      "reason" : "",
+      "requestId" : "1590221699730_3"
+    }
+     
+The response provides the reduced account value, but also the playId, which is the started 
+game. Note that the portal tracks the time for the game.
+
+
+
+### Error cases:  
+In case the authentication is not matching:
+
+    {
+    	"@class": ".SetWageResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Authentication is failing."
+    	},
+    	"requestId": "1590221699845_3"
+    }
+
+
+In case not enough coins are available:
+
+    {
+    	"@class": ".SetWageResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Error: Not enough coins available."
+    	},
+    	"requestId": "1590221699845_3"
+    }
+
+In case the game if offline or not available:
+
+    {
+    	"@class": ".SetWageResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Game doesn't exist."
+    	},
+    	"requestId": "1590221699845_3"
+    }
+
 
