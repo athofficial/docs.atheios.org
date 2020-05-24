@@ -1,4 +1,4 @@
-# The modules to interface the portal
+# The modules
 There are currently several modules for game developers available:
 
 * Construct 3

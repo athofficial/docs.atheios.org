@@ -3,10 +3,11 @@ site_description: Documentation for the Atheios project
 theme: readthedocs
 nav:
     - 'index.md'
+    - 'introduction.md'
     - 'start.md'
     - 'api.md'
+    - 'api/garp.md'
     - 'api/portal.md'
     - 'api/api.md'
-    - 'api/wss.md'
     - 'gamedev_modules.md'
     - 'gath.md'
