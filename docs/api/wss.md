@@ -20,10 +20,13 @@ Currently we are in version 0.1.4. We are using the following definitions:
     Compatibility breaking changes can happen, though we try to minimize it
 * Beta stage version: below 1.0.0:
     Smaller changes potential compatibility breaking changes are prevented.
-* Release versions like 1.x.x,2.x.x etc
+* Release versions like 1.x.x, 2.x.x etc
     In this stage we keep compatibility. New releases are published well ahead and 
     test pools are provided for early integration
     
+## Overview
+The following picture provides a functional relation of request and responses.
+
 ## Terminology
 In the next paragraph we will use 
 
@@ -164,7 +167,8 @@ In case the authentication is not matching:
     	},
     	"requestId": "1590177530798_1"
     }
-
+    
+    
 ## SetWageRequest
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
@@ -177,15 +181,15 @@ on the portal side to move the wage value from the user hot account to the gamin
 The websocket message sent jas the following JSON format:
 
     {
-        "@class": ".SetWageRequest",
-        "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
-        "gameId": "27",
-        "userId": "1",
-        "apiKey": "KpcxJ-mkxhV-nunAs-KbItV-FbNTV",
-        "wage": "1",
-        "requestId": "1590221699730_3"
+    	"@class": ".SetWageRequest",
+    	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+    	"gameId": "27",
+    	"userId": "1",
+    	"apiKey": "KpcxJ-mkxhV-nunAs-KbItV-FbNTV",
+    	"wage": "1",
+    	"requestId": "1590221699730_3"
     }
-        
+
 ### Successful case:  
 The successful response is rendered according to the following:
 
@@ -218,65 +222,33 @@ In case the authentication is not matching:
     	"requestId": "1590221699845_3"
     }
 
-
-In case not enough coins are available:
-
-    {
-    	"@class": ".SetWageResponse",
-    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
-    	"error": {
-    		"details": "Error: Not enough coins available."
-    	},
-    	"requestId": "1590221699845_3"
-    }
-
-In case the game if offline or not available:
-
-    {
-    	"@class": ".SetWageResponse",
-    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
-    	"error": {
-    		"details": "Game doesn't exist."
-    	},
-    	"requestId": "1590221699845_3"
-    }
-
-## SetWageRequest
+## FinishGameRequest
 Availablility:  
 <button type="button" class="btn btn-primary">0.1.4</button>
 
 ### Functionality:  
-This request sets the wage and should be the trigger for game start. This will trigger
-on the portal side to move the wage value from the user hot account to the gaming pot.
+This request ends a game and reposts the score. 
 
 ### Request
 The websocket message sent jas the following JSON format:
 
     {
-        "@class": ".SetWageRequest",
+        "@class": ".FinishGameRequest",
         "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
-        "gameId": "27",
         "userId": "1",
-        "apiKey": "KpcxJ-mkxhV-nunAs-KbItV-FbNTV",
-        "wage": "1",
-        "requestId": "1590221699730_3"
+        "playId": "364",
+        "scoreValue": "1237",
+        "requestId": "1590304599414_8"
     }
-        
 ### Successful case:  
 The successful response is rendered according to the following:
 
     {
-      "@class" : ".SetWageResponse",
+      "@class" : ".FinishGameResponse",
       "authToken" : "CvZCaiXMcHVqk0uwh0b9VVOB",
-      "value" : 162,
-      "playid" : 353,
-      "gameid" : 27,
-      "currency" : "ATH",
       "status" : "OK",
-      "reason" : "",
-      "requestId" : "1590221699730_3"
-    }
-     
+      "requestId" : "1590304599414_8"
+    }     
 The response provides the reduced account value, but also the playId, which is the started 
 game. Note that the portal tracks the time for the game.
 
@@ -286,7 +258,89 @@ game. Note that the portal tracks the time for the game.
 In case the authentication is not matching:
 
     {
-    	"@class": ".SetWageResponse",
+    	"@class": ".FinishGameResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "Authentication is failing."
+    	},
+    	"requestId": "1590221699845_3"
+    }
+
+In case the playId is not set:
+
+    {
+    	"@class": ".FinishGameResponse",
+    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
+    	"error": {
+    		"details": "PlayId not properly set."
+    	},
+    	"requestId": "1590221699845_3"
+    }
+
+
+## GameLadderRequest
+Availablility:  
+<button type="button" class="btn btn-primary">0.1.4</button>
+
+### Functionality:  
+This request triggers a game ladder request. 
+
+### Request
+The websocket message sent jas the following JSON format:
+
+    {
+        "@class": ".GameLadderRequest",
+        "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+        "userId": "1",
+        "playId": "353",
+        "gameId": "27",
+        "requestId": "1590265383100_5"
+    }        
+        
+### Successful case:  
+The successful response is rendered according to the following:
+
+    {
+    	"@class": ".GameLadderResponse",
+    	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
+    	"requestId": "1590265383100_5",
+    	"totalGames": 31,
+    	"inPlay": 3,
+    	"timeLeft": 43636,
+    	"ladder": [{
+    		"position": "3",
+    		"score": "2759",
+    		"displayname": "The big boss",
+    		"amount": "1",
+    		"date": "2020-05-23"
+    	}, {
+    		"position": "1",
+    		"score": "4707",
+    		"displayname": "DuckMyTruck",
+    		"amount": "1",
+    		"date": "2020-05-18"
+    	}, {
+    		"position": "2",
+    		"score": "3541",
+    		"displayname": "Lars",
+    		"amount": "1",
+    		"date": "2020-05-19"
+    	}, {
+    		"position": "3",
+    		"score": "2759",
+    		"displayname": "DuckMyTruck",
+    		"amount": "1",
+    		"date": "2020-05-18"
+    	}]
+    }
+     
+
+
+### Error cases:  
+In case the authentication is not matching:
+
+    {
+    	"@class": ".GameLadderponse",
     	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
     	"error": {
     		"details": "Authentication is failing."
@@ -295,26 +349,6 @@ In case the authentication is not matching:
     }
 
 
-In case not enough coins are available:
 
-    {
-    	"@class": ".SetWageResponse",
-    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
-    	"error": {
-    		"details": "Error: Not enough coins available."
-    	},
-    	"requestId": "1590221699845_3"
-    }
-
-In case the game if offline or not available:
-
-    {
-    	"@class": ".SetWageResponse",
-    	"authToken": "Qt4pzdX3JQtM8kZwFUjWoZ5d",
-    	"error": {
-    		"details": "Game doesn't exist."
-    	},
-    	"requestId": "1590221699845_3"
-    }
 
 
