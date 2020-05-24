@@ -1,4 +1,4 @@
-# Introduction to Atheios
+# Welcome to the Atheios documentation
 
 ![Atheios Logo](img/index/atheios_logo.png "The Atheios logo")  
 
@@ -10,6 +10,7 @@ Depending on the readers interest there are different areas of interest
 * [APIs](/api/)
     * [GARP protocol](/api/garp/)
     * [REST API](/api/portal/)
-    * [Blockchain API](/api/api/)
-* [Knowwledgebase](/gath/)
+    * [Blockchain API](/en/latest/api/api/)
+* Modules for game developers
+* [Knowwledgebase](gath/)
      
