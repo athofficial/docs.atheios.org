@@ -1,11 +1,12 @@
 
-# GARP V1.5.0
+# GARP V0.15
 
 ## Impact
-* We have introduced procol id handling for every call, this allows us to evolve the
+* We have introduced a procol id handling for every call. This allows us to evolve the
 SW without really breaking backwards compatibility. As we are using different modules
-You as a developer have not to care about it. A module of v.1.5.0 will make itself 
-known to use v.1.5.0 as protocol id and V1.5.0 calls are used.  
+You as a developer have not to care about it. A module of v0.1.5 will make itself 
+known to use v0.1.5 as protocol id and v0.1.5 calls are used.  
+
 Which SW modules are available can be
 found [here](gamedev_modules/). 
 

@@ -1,5 +1,5 @@
 
-# GARP V1.4.0
+# GARP V0.1.4
 
 ## Overview
 The following picture provides a functional relation of request and responses.
