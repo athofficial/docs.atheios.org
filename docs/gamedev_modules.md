@@ -18,5 +18,5 @@ On the same page You can also find some example code to show how to communicate 
 
 In order for the code to work You need to register as a game developer at:
 https://portal.atheios.org
-After game creation on the portal, You will get a game token an game secret, which You need to use to initialize the Atheios moduke in construct.
+After game creation on the portal, You will get a game token an game secret, which You need to use to initialize the Atheios module in construct.
 
