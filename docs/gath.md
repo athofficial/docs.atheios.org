@@ -1,12 +1,12 @@
 # GATH - The go-lang implementation of Atheios
 gath is the central SW to run an own node. There are a lot of options for gath
-as specified when You run
+as specified when you run
 
     gath -help
     
 when running gath as an own node please be aware that there are a lot of people
-trying to harvest Your Atheios. So when You setup Your own node, make sure
-You do not expose RPC to the internet.
+trying to harvest Your Atheios. So when you setup your own node, make sure
+you do not expose RPC to the internet.
 
 You can prevent that by
 

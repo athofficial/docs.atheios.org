@@ -2,7 +2,7 @@
 
 We have designed a game resolution protocol (GARP) on top of websocket. This 
 protocol does all the game resolution handling.
-The endpoint of that protocol is wss.atheios.org. From there You might be directed to other domains
+The endpoint of that protocol is wss.atheios.org. From there you might be directed to other domains
 from a load distribution perspective.
 
 ## The details
