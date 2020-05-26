@@ -33,6 +33,6 @@ over. The staging server will be called wss-test.atheios.org.
 
 The next version of the SW will be called 0.1.5 and is available now.
 
-* [GARP V1.4.0](/api/garp_v140/)    
-* [GARP V1.5.0](/api/garp_v150/)    
+* [GARP V0.1.4](api/garp_v014/)    
+* [GARP V0.1.5](api/garp_v015/)    
 
