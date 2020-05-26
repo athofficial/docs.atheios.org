@@ -7,6 +7,8 @@ nav:
     - 'start.md'
     - 'api.md'
     - 'api/garp.md'
+    - 'api/garp_v140.md'
+    - 'api/garp_v150.md'
     - 'api/portal.md'
     - 'api/api.md'
     - 'gamedev_modules.md'
