@@ -2,10 +2,9 @@
 # GARP V0.15
 
 ## Impact
-* We have introduced a procol id handling for every call. This allows us to evolve the
-SW without really breaking backwards compatibility. As we are using different modules
-You as a developer have not to care about it. A module of v0.1.5 will make itself 
-known to use v0.1.5 as protocol id and v0.1.5 calls are used.  
+* We have introduced a protocol id handling for every call. This allows us to evolve the
+SW without really breaking backwards compatibility. v0.1.5 corresponds protocolId:2  
+* Added functionality for AuthenticatedConnectRequest/Response
 
 Which SW modules are available can be
 found [here](gamedev_modules/). 
@@ -20,7 +19,7 @@ In the next paragraph we will use
     <WHATEVER> as a place holder for WHATEVER    
 ## AuthenticatedConnectRequest
 ### Availablility:  
-<button type="button" class="btn btn-primary">0.1.4</button>
+<button type="button" class="btn btn-primary">0.1.5</button>
 
 ### Functionality:  
 This function is a mandatory start of all communication with the websocket.
@@ -37,14 +36,27 @@ ensuring that the game is authenticated. If the communication is successful
 the wss protocol will reply a session ID which is stored as a state.
 
 ### Successful case:  
-The case is successful when wss returns a session ID
+The case is successful when the GARP protocol returns a session ID
 
     {
-    	"@class": ".AuthenticatedConnectResponse",
-    	"requestId": "0",
-    	"sessionId": "Guwui-r7H4P-G7pNg-4p7OU-3rzth"
+        "@class": ".AuthenticatedConnectResponse",
+        "sessionId": "2pfwp-ZXFp3-Krun0-rc17Y-NO5Jg",
+        "gameId": "8",
+        "wage": "1",
+        "player1": "6",
+        "player2": "3",
+        "player3": "1",
+        "player4": "0",
+        "player5": "0",
+        "scheme": "0.8"
+        "requestId": "0"
     }
 
+and also game related information like:
+
+    wage:   Mandated wage value
+    scheme: How much of the pot is distributed to the payers
+    player1... player5: Distribution between players  
 
 ### Error cases:  
 A single error case can occure, when the <GAMETOKENID> cannot be found.
@@ -125,6 +137,7 @@ The websocket message sent jas the following JSON format:
 
     {
         "@class": ".AccountDetailsRequest",
+        "protocolId": 2
     	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
     	"userId": "1",
     	"requestId": "1590221675618_2"
@@ -169,6 +182,7 @@ The websocket message sent jas the following JSON format:
 
     {
     	"@class": ".SetWageRequest",
+        "protocolId": 2
     	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
     	"gameId": "27",
     	"userId": "1",
@@ -221,6 +235,7 @@ The websocket message sent jas the following JSON format:
 
     {
         "@class": ".FinishGameRequest",
+        "protocolId": 2
         "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
         "userId": "1",
         "playId": "364",
@@ -277,6 +292,7 @@ The websocket message sent jas the following JSON format:
 
     {
         "@class": ".GameLadderRequest",
+        "protocolId": 2
         "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
         "userId": "1",
         "playId": "353",
