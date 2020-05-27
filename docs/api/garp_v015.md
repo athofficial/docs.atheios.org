@@ -90,6 +90,7 @@ The successful response is rendered according to the following:
 
     {
       "@class" : ".AuthenticationResponse",
+      "protocolId": 2,
       "authToken" : "Qt4pzdX3JQtM8kZwFUjWoZ5d",
       "displayName" : "Lars",
       "newPlayer" : false,
@@ -137,7 +138,7 @@ The websocket message sent jas the following JSON format:
 
     {
         "@class": ".AccountDetailsRequest",
-        "protocolId": 2
+        "protocolId": 2,
     	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
     	"userId": "1",
     	"requestId": "1590221675618_2"
@@ -182,7 +183,7 @@ The websocket message sent jas the following JSON format:
 
     {
     	"@class": ".SetWageRequest",
-        "protocolId": 2
+        "protocolId": 2,
     	"authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
     	"gameId": "27",
     	"userId": "1",
@@ -235,7 +236,7 @@ The websocket message sent jas the following JSON format:
 
     {
         "@class": ".FinishGameRequest",
-        "protocolId": 2
+        "protocolId": 2,
         "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
         "userId": "1",
         "playId": "364",
@@ -292,7 +293,7 @@ The websocket message sent jas the following JSON format:
 
     {
         "@class": ".GameLadderRequest",
-        "protocolId": 2
+        "protocolId": 2,
         "authToken": "CvZCaiXMcHVqk0uwh0b9VVOB",
         "userId": "1",
         "playId": "353",
