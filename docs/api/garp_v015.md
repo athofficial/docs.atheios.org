@@ -48,7 +48,7 @@ The case is successful when the GARP protocol returns a session ID
         "player3": "1",
         "player4": "0",
         "player5": "0",
-        "scheme": "0.8"
+        "scheme": "0.8",
         "requestId": "0"
     }
 
@@ -79,6 +79,7 @@ The websocket message sent jas the following JSON format:
 
     {
     	"@class": ".AuthenticationRequest",
+        "protocolId": 2,
     	"username": "<USERNAME>",
     	"userpass": "<USERPASSWORD>",
     	"apikey": "<GAMETOKENID>",
@@ -90,7 +91,6 @@ The successful response is rendered according to the following:
 
     {
       "@class" : ".AuthenticationResponse",
-      "protocolId": 2,
       "authToken" : "Qt4pzdX3JQtM8kZwFUjWoZ5d",
       "displayName" : "Lars",
       "newPlayer" : false,
