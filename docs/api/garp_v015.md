@@ -19,7 +19,7 @@ In the next paragraph we will use
     <WHATEVER> as a place holder for WHATEVER    
 ## AuthenticatedConnectRequest
 ### Availablility:  
-<button type="button" class="btn btn-primary">0.1.5</button>
+<button type="button" class="btn btn-primary">0.1.4</button>
 
 ### Functionality:  
 This function is a mandatory start of all communication with the websocket.
@@ -40,6 +40,44 @@ The case is successful when the GARP protocol returns a session ID
 
     {
         "@class": ".AuthenticatedConnectResponse",
+        "sessionId": "2pfwp-ZXFp3-Krun0-rc17Y-NO5Jg",
+        "requestId": "0"
+    }
+
+### Error cases:  
+A single error case can occure, when the <GAMETOKENID> cannot be found.
+
+    {
+    	"@class": ".AuthenticatedConnectResponse",
+    	"error": "Unknown GameID ",
+    	"requestId ": "0"
+    }
+
+## GameInfoRequest
+### Availablility:  
+<button type="button" class="btn btn-primary">0.1.5</button>
+
+### Functionality:
+This function can be called after AuthenticatedConnectRequest and the 
+response provides game related information which could be displayed at the 
+login window.   
+
+### Request
+The websocket message sent has the following JSON format:
+
+    {
+    	"@class": ".GameInfoRequest",
+        "protocolId": 2,
+    	"apikey": "<GAMETOKENID>",
+    	"requestId": "1590177530798_1"
+    }
+ 
+
+### Successful case:  
+The case is successful when the GARP protocol returns game related data
+
+    {
+        "@class": ".GameInfoResponse",
         "sessionId": "2pfwp-ZXFp3-Krun0-rc17Y-NO5Jg",
         "gameId": "8",
         "wage": "1",
