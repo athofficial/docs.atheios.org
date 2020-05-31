@@ -87,7 +87,8 @@ The case is successful when the GARP protocol returns game related data
         "player4": "0",
         "player5": "0",
         "scheme": "0.8",
-        "requestId": "0"
+        "description": "This is the description You added in the portal for the game",
+        "requestId": "1590177530798_1"
     }
 
 and also game related information like:
