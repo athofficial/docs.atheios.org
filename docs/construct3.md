@@ -26,6 +26,19 @@ will see the following layout and event sheets.
 
 ![Atheios Logo](img/construct3/template_in_construct3.png "The template file")  
 
+Check out the different groups
+* login - Login layout
+* elogin - event functionality for login
+* wage
+* ewage
+* ladder
+* eladder
+* gamelayout
+* gameevent
+
+The last two items are where You need to integrate Your game.
+    
+
 
 On the same page you can also find some example code to show how to communicate 
 with the module.
