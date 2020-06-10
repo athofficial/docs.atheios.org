@@ -3,8 +3,15 @@
 
 ## Impact
 * We have introduced a protocol id handling for every call. This allows us to evolve the
-SW without really breaking backwards compatibility. v0.1.5 corresponds protocolId:2  
-* Added functionality for AuthenticatedConnectRequest/Response
+SW without really breaking backwards compatibility.
+    * v0.1.5 corresponds protocolId:2  
+    If You use any of our modules like
+        * Construct3
+        * Javastript modules    
+  
+    You do not need to care for the procotolId as it will be handled by the underlaying layers.
+      
+* New message [GameInfoRequest](#GameInfoRequest)
 
 Which SW modules are available can be
 found [here](gamedev_modules/). 
