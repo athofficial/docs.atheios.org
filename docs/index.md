@@ -12,5 +12,6 @@ Depending on the readers interest there are different areas of interest
     * [REST API](api/portal/)
     * [Blockchain API](api/api/)
 * [Modules for game developers](gamedev_modules/)
+* [Resources](resources/)
 * [Knowledgebase](gath/)
      
