@@ -2,8 +2,8 @@
 Here You can find a list of useful resources for Atheios.
 
 ## Core resources
-* [Website: https://www.atheios.org](https://atheios.org/)
-* [Blockchain explorer https://explorer.atheios.org](https://explorer.atheios.org)
+* [Website](https://atheios.org/)
+* [Blockchain explorer](https://explorer.atheios.org)
 * [Github Athoffical](https://github.com/athofficial)
 * [Desktop Wallet](https://github.com/athofficial/ATHDesktopWallet/releases)
 * [Online Wallet](http://wallet.atheios.org)
@@ -13,7 +13,7 @@ Here You can find a list of useful resources for Atheios.
 * [Game developer portal](https://portal.atheios.org)
 
 ## Social resources
-* [Medium]()
+* [Medium](https://medium.com/@atheiosteam)
 * [Reddit Atheios](https://www.reddit.com/r/Atheios)
 * [Twitter Atheiosofficial](https://twitter.com/atheiosofficial)
 * [Telegram Atheiosofficial](https://t.me/atheiosofficial)
