@@ -6,7 +6,7 @@ nav:
     - 'introduction.md'
     - 'start.md'
     - 'api.md'
-        - 'api/garp.md'
+        - 'docs/api/garp.md'
         - 'api/garp_v014.md'
         - 'api/garp_v015.md'
         - 'api/portal.md'
