@@ -14,4 +14,3 @@ Depending on the readers interest there are different areas of interest
 * [Modules for game developers](gamedev_modules/)
 * [Resources](resources/)
 * [Knowledgebase](gath/)
-     
