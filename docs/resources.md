@@ -25,6 +25,7 @@ Here You can find a list of useful resources for Atheios.
 * [Safe](https://safe.trade/trading/athbtc)
 * [Asymetrex](https://asymetrex.com/markets)
 
+
 ## Pools
 * [Wattpool](https://atheios.wattpool.net/)
 * [Comining](http://comining.io/)
@@ -41,5 +42,8 @@ Here You can find a list of useful resources for Atheios.
 * [Nomics](https://nomics.com/assets/atheios-atheios)
 * [Crypto compare](https://www.cryptocompare.com/coins/ath/overview)
 * [Coin lore](https://www.coinlore.com/coin/atheios)
+
 ## Apps
 * [Blockfolio](https://blockfolio.com/coin/ATH_2)
+* [ETHER1 wallet supporting ATH for Android](https://play.google.com/store/apps/details?id=app.web.nextshore_ether1)
+* [ETHER1 wallet supporting ATH for IOS](https://apps.apple.com/za/app/nextshore-ether-1-wallet/id1521802485)
