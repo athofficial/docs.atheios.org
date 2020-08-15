@@ -7,6 +7,7 @@ Here You can find a list of useful resources for Atheios.
 * [Github Athoffical](https://github.com/athofficial)
 * [Desktop Wallet](https://github.com/athofficial/ATHDesktopWallet/releases)
 * [Online Wallet](http://wallet.atheios.org)
+* [Richlist](http://richlist.atheios.org)
 
 ## Gaming related resource
 * [Gamer portal](https://play.atheios.org)
