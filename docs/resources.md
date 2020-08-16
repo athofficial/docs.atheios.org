@@ -31,6 +31,7 @@ Here You can find a list of useful resources for Atheios.
 * [Comining](http://comining.io/)
 * [Solo pool](https://solo-ath.shpool.net)
 * [Miner stats](https://minerstat.com/coin/ATH)
+* [Pool stats](https://miningpoolstats.stream/atheios)
 
 ## External resources
 * [Coingecko](https://www.coingecko.com/en/coins/atheios)
